@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace SignalrCore.Chat.Server
+namespace SignalrCore.Chat.Client
 {
     public class Program
     {
@@ -18,14 +18,14 @@ namespace SignalrCore.Chat.Server
         }
 
         //public static IWebHost BuildWebHost(string[] args) =>
-        //   WebHost.CreateDefaultBuilder(args)
-        //      .UseUrls("http://localhost:8888")
-        //      .UseStartup<Startup>()
-        //      .Build();
+        //    WebHost.CreateDefaultBuilder(args)
+        //        .UseStartup<Startup>()
+        //        .Build();
 
         public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-            .UseStartup<Startup>()            
-            .Build();
+           WebHost.CreateDefaultBuilder(args)
+              .UseUrls("http://*:10000;http://*:10001;http://*:10002")
+              .UseStartup<Startup>()
+              .Build();
     }
 }

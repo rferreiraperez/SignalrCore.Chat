@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Chat";
+}
+
+<form>
+    <div class="form-group">
+        <label for="nicknameInputText">Nickname</label>
+        <input type="text" class="form-control" id="nicknameInputText" placeholder="Enter nickname">
+        <small id="nicknameHelp" class="form-text text-muted">Be original with your nickname ;)</small>
+    </div>
+    <div class="form-group">
+        <label for="messageTextArea">Message</label>
+        <textarea class="form-control"  id="messageTextArea" rows="5"></textarea>
+        <small id="messageHelp" class="form-text text-muted">Be careful! your message will send to all users</small>
+    </div>
+    <button type="submit" id="sendButton" class="btn btn-primary">Send</button>
+</form>
+
+<hr />
+
+<ul id="messages">
+
+</ul>
+
+@section scripts {
+    <script src="~/lib/signalr/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
+}
